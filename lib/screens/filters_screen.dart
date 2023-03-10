@@ -24,7 +24,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
     _lactoseFree = (widget.currentFilters['lactose']) as bool;
     _vegetarian = (widget.currentFilters['vegetarian']) as bool;
     _vegan = (widget.currentFilters['vegan']) as bool;
-    // TODO: implement initState
+
+    // print(_lactoseFree);
     super.initState();
   }
 
@@ -51,6 +52,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
         ),
         actions: <Widget>[
           IconButton(
+            icon: const Icon(Icons.save),
             onPressed: () {
               final selectedFilters = {
                 'gluten': _glutenFree,
@@ -60,7 +62,6 @@ class _FiltersScreenState extends State<FiltersScreen> {
               };
               widget.saveFilters(selectedFilters);
             },
-            icon: const Icon(Icons.save),
           )
         ],
       ),
